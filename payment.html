@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <header class="header">
+        <div class="header__inner">
+            <div class="logo">SHOP</div>
+            <nav class="nav">
+                <a href="index.html">Shop</a>
+                <a href="login.html">Account</a>
+                <a href="cart.html" class="js-open-menu">Cart(0)</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form action="Data.xlsx" method="POST">
+        <h1 class="main_heading">Thanh toán</h1>
+        <hr>
+        <h2>Thông tin <i class="fa fa-id-card"></i></h2>
+        <p>Họ và tên:* <i class="fa fa-user"></i><input type="text" name="name" required placeholder="Enter Full Name"></p>
+        <fieldset>
+            <legend>Giới tính</legend>
+            <p>
+            Nam <i class="fa fa-male"></i><input type="radio" name="Gender" id="Male">
+            Nữ <i class="fa fa-female"></i></i><input type="radio" name="Gender" id="Female">
+            </p>
+        </fieldset>
+        <p>Địa chỉ:* <textarea name="" id="" cols="100" rows="8" required placeholder="Enter Your Address"></textarea></p>
+        <p>Email:* <input type="email" name="email" id="email" required placeholder="darts.support@gmail.com"></p>
+        <p>Pincode:* <input type="number" name="Pincode" id="Pincode" required placeholder="123456"></p>
+        <h2>Thông tin thanh toán</h2>
+        <p>Loại thẻ:
+            <i class="fa fa-credit-card"></i>
+            <i class="fa fa-cc-visa"></i>
+            <i class="fa fa-cc-mastercard"></i>
+            <select name="card_type" id="card_type">
+            <option value="">------Select Card Type------</option>
+            <option value="Visa">Visa</option>
+            <option value="Rupay">Rupay</option>
+            <option value="MasterCard">MasterCard</option>
+            </select>
+        </p>
+        <p>
+            Card Number:* <input type="number" name="card_number" id="card_number" required placeholder="1111-2222-3333-4444">
+        </p>
+        <p>
+            Expiry Date:* <input type="month" name="expiry_date" id="expiry_date" required>
+        </p>
+        <p>
+            CVV:* <i class="fa fa-expeditedssl"></i> <input type="password" name="cvv" id="cvv" required placeholder="123">
+        </p>
+        <p>
+            <input type="submit" value="Pay Now"> <input type="reset" value="Reset">
+        </p>
+        </form>
+    </div>
+</body>
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 15px 30px;
+  font-size: 17px;
+  padding: 8px;
+}
+
+.container {
+  background-color: white;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-top: 100px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="month"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(219, 212, 212);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+fieldset {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.main_heading {
+  text-align: center;
+}
+
+input[type="submit"] {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 40%;
+}
+
+input[type="submit"]:hover {
+  background-color: hotpink;
+}
+
+input[type="reset"]:hover {
+  background-color: hotpink;
+}
+
+input[type="reset"] {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 30%;
+}
+
+.header {
+	 position: fixed;
+	 inset: 0 0 auto 0;
+	 z-index: 3;
+	 background-color: #fff;
+}
+ .header__inner {
+	 display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+	 width: 100%;
+	 margin-inline: auto;
+	 height: 60px;
+}
+ .logo {
+	 font-weight: 900;
+	 letter-spacing: 0.1rem;
+   cursor: pointer;
+}
+ .nav {
+	 display: flex;
+	 align-items: center;
+	 font-size: 0.9rem;
+	 justify-content: center;
+	 gap: 2rem;
+}
+ .nav a {
+	 color: #000;
+	 text-decoration: none;
+	 opacity: 0.6;
+}
+ .nav a:hover {
+	 opacity: 1;
+}
+
+
+</style>
+</html>

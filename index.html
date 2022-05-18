@@ -7,21 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="navigation">
-        <div class="nav-container">
-          <div class="brand">
-            <a href="#!">Logo</a>
-          </div>
-          <nav>
-            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-            <ul class="nav-list">
-              <li>
-                <a href="#!">Cart</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </section>
+  <header class="header">
+    <div class="header__inner">
+        <div class="logo">SHOP</div>
+        <nav class="nav">
+            <a href="index.html">Shop</a>
+            <a href="login.html">Account</a>
+            <a href="cart.html" class="js-open-menu">Cart(0)</a>
+        </nav>
+    </div>
+</header>
     <ul class="mystyle-products">
         <li class="product">
             <a href="14-single-product.html">
@@ -168,7 +163,7 @@
  .mystyle-products {
 	 list-style: none;
 	 margin: 0;
-	 padding: 0;
+	 padding: 0 200px;
 	 display: flex;
 	 flex-wrap: wrap;
 }
@@ -457,6 +452,42 @@ article {
   margin: 0 auto;
   padding: 10px;
 }
-
+.product{
+  margin: 0 10px;
+}
+.header {
+	 position: fixed;
+	 inset: 0 0 auto 0;
+	 z-index: 3;
+	 background-color: #fff;
+}
+ .header__inner {
+	 display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+	 width: 100%;
+	 margin-inline: auto;
+	 height: 60px;
+}
+ .logo {
+	 font-weight: 900;
+	 letter-spacing: 0.1rem;
+   cursor: pointer;
+}
+ .nav {
+	 display: flex;
+	 align-items: center;
+	 font-size: 0.9rem;
+	 justify-content: center;
+	 gap: 2rem;
+}
+ .nav a {
+	 color: #000;
+	 text-decoration: none;
+	 opacity: 0.6;
+}
+ .nav a:hover {
+	 opacity: 1;
+}
 </style>
 </html>

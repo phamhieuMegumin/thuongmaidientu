@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <div class="logo">SHOP</div>
+            <nav class="nav">
+                <a href="">Shop</a>
+                <a href="">Account</a>
+                <a href="" class="js-open-menu">Cart(0)</a>
+            </nav>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="product-top">
+            <div class="product__gallery">
+                <img src="https://images.unsplash.com/photo-1552664199-fd31f7431a55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80" alt="">
+            </div>
+            <div class="product__info">
+                <div class="product__desc">
+                    <div class="product__type">Running</div>
+                    <h1>Product Name</h1>
+                    <p class="product__price">$790.00</p>
+                    <div class="product__short">
+                        <p>The Faithless Thermal Windbreaker brings the cold during and after all your workouts. It’s composed of thermal fabric with a lightweight insulation padding neatly tucked away to keep you warm and dry for good.</p>
+                    </div>
+                    <div class="product__sizes">
+                        <span>S</span>
+                        <span>M</span>
+                        <span>L</span>
+                    </div>
+                    <button class="product__btn">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart">
+        <div class="cart__inner">
+            <header class="cart__header">
+                <p>My cart</p>
+                <button class="close-cart">Close(x)</button>
+            </header>
+            <div class="cart__content">
+                Your cart is empty
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</body>
+<style>
+    body {
+	 font-family: "Inter", sans-serif;
+	 font-size: 1rem;
+	 padding-top: 60px;
+}
+ body.nav-open {
+	 overflow-y: hidden;
+}
+ img {
+	 display: block;
+	 height: auto;
+	 max-width: 100%;
+}
+ .header {
+	 position: fixed;
+	 inset: 0 0 auto 0;
+	 z-index: 3;
+	 background-color: #fff;
+}
+ .header__inner {
+	 display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+	 width: 100%;
+	 margin-inline: auto;
+	 height: 60px;
+}
+ .logo {
+	 font-weight: 900;
+	 letter-spacing: 0.1rem;
+}
+ .nav {
+	 display: flex;
+	 align-items: center;
+	 font-size: 0.9rem;
+	 justify-content: center;
+	 gap: 2rem;
+}
+ .nav a {
+	 color: #000;
+	 text-decoration: none;
+	 opacity: 0.6;
+}
+ .nav a:hover {
+	 opacity: 1;
+}
+ .wrapper {
+	 width: 100%;
+	 margin-inline: auto;
+	 transform: translateX(0);
+	 transition: all 600ms cubic-bezier(0.545, -0.44, 0.43, 1.425);
+}
+ .nav-open .wrapper {
+	 transform: translateX(-20%);
+}
+ .product-top {
+	 position: relative;
+	 display: flex;
+}
+ .product__gallery {
+	 flex-shrink: 0;
+}
+ .product__sizes {
+	 margin-bottom: 2rem;
+	 display: flex;
+	 align-items: center;
+	 justify-content: flex-start;
+	 gap: 1rem;
+}
+ .product__sizes span {
+	 height: 30px;
+	 width: 30px;
+	 font-size: 0.9rem;
+	 display: inline-flex;
+	 align-items: center;
+	 justify-content: center;
+	 border: 1px solid #000;
+}
+ .product__info {
+	 position: relative;
+}
+ .product__info h1 {
+	 margin-bottom: 1.5rem;
+	 font-size: 2rem;
+	 font-weight: 600;
+}
+ .product__price {
+	 margin-bottom: 2rem;
+	 font-size: 1.5rem;
+}
+ .product__short {
+	 margin-bottom: 2rem;
+	 line-height: 1.5;
+}
+ .product__desc {
+	 position: sticky;
+	 top: 0;
+	 padding: 10vh 0 10vh 5vh;
+}
+ .product__btn {
+	 position: relative;
+	 display: inline-flex;
+	 border: none;
+	 padding: 1rem 2.5rem;
+	 color: #fff;
+	 font-size: 1rem;
+	 cursor: pointer;
+	 background-color: #000;
+	 transition: background-color 0.3s;
+}
+ .product__btn:hover {
+	 background-color: #fff;
+	 color: #000;
+}
+ .product__btn:hover::after, .product__btn:hover::before {
+	 transform: scale(1, 1);
+}
+ .product__btn::after, .product__btn::before {
+	 content: "";
+	 position: absolute;
+	 inset: 0;
+	 transition: all 0.5s;
+}
+ .product__btn::after {
+	 border-right: 1px solid black;
+	 border-left: 1px solid black;
+	 transform: scale(1, 0);
+	 transform-origin: center;
+}
+ .product__btn::before {
+	 border-top: 1px solid black;
+	 border-bottom: 1px solid black;
+	 transform: scale(0, 1);
+	 transform-origin: center;
+}
+ .product__type {
+	 margin-bottom: 0.5rem;
+	 font-size: 0.9rem;
+}
+ .product-bottom {
+	 margin-top: 2rem;
+	 padding-top: 3rem;
+	 padding-bottom: 5rem;
+	 border-top: 1px solid #eee;
+}
+ .product-bottom h2 {
+	 font-size: 2rem;
+	 font-weight: 800;
+	 margin-bottom: 1rem;
+}
+ .product-bottom h2:not(:first-child) {
+	 margin-top: 3rem;
+}
+ .product-bottom p {
+	 font-size: 1.1rem;
+	 line-height: 1.5;
+	 margin-bottom: 1rem;
+}
+ .cart {
+	 position: fixed;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 z-index: 10;
+	 width: 30vw;
+	 background-color: #fff;
+	 padding: 5vw;
+	 transform: translateX(100%);
+	 transition: all 0.3s ease-in-out;
+}
+ .cart__inner {
+	 display: flex;
+	 flex-direction: column;
+	 height: 100%;
+}
+ .nav-open .cart {
+	 transform: translateX(0);
+}
+ .cart__header {
+	 display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+}
+ .cart__header p {
+	 font-size: 1.5rem;
+	 font-weight: 800;
+}
+ .cart__content {
+	 flex-grow: 1;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 justify-content: center;
+}
+ .close-cart {
+	 border: none;
+	 appearance: none;
+	 font-size: 1rem;
+	 background: transparent;
+	 cursor: pointer;
+}
+ .overlay {
+	 position: fixed;
+	 inset: 0;
+	 background-color: rgba(0, 0, 0, 0.5);
+	 z-index: 9;
+	 opacity: 0;
+	 visibility: hidden;
+	 transition: all 0.3s;
+}
+ .nav-open .overlay {
+	 opacity: 1;
+	 visibility: visible;
+}
+ 
+</style>
+</html>
